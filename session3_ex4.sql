@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS session3_ex4;
+USE session3_ex4;
+CREATE TABLE users (
+user_id INT PRIMARY KEY AUTO_INCREMENT,
+user_name VARCHAR(100) UNIQUE NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
+password VARCHAR(45) ,
+status VARCHAR(45) DEFAULT 'active'
+);
+ALTER TABLE users 
+ADD CHECK (status = 'active');
+
+DROP TABLE IF EXISTS users ;
